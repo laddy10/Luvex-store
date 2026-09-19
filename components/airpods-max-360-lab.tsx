@@ -26,45 +26,48 @@ export function AirPodsMax360Lab() {
 
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     let raf = 0;
+    let lastFrame = -1;
+    let lastReduced = media.matches;
 
-    const update = () => {
-      raf = 0;
-
+    const tick = () => {
       const shouldReduce = media.matches;
-      setReduced(shouldReduce);
 
       if (shouldReduce) {
-        setFrame(0);
+        if (!lastReduced) setReduced(true);
+        if (lastFrame !== 0) setFrame(0);
         section.style.setProperty("--lab360-progress", "0");
+        lastFrame = 0;
+        lastReduced = true;
+        raf = window.requestAnimationFrame(tick);
         return;
       }
 
+      if (lastReduced) setReduced(false);
+      lastReduced = false;
+
       const rect = section.getBoundingClientRect();
-      const range = Math.max(1, rect.height - window.innerHeight);
+      const viewportHeight =
+        window.visualViewport?.height || window.innerHeight || 1;
+      const range = Math.max(1, rect.height - viewportHeight);
       const progress = Math.max(0, Math.min(1, -rect.top / range));
       const nextFrame = Math.min(
         FRAME_COUNT - 1,
         Math.round(progress * (FRAME_COUNT - 1)),
       );
 
-      setFrame(nextFrame);
+      if (nextFrame !== lastFrame) {
+        setFrame(nextFrame);
+        lastFrame = nextFrame;
+      }
+
       section.style.setProperty("--lab360-progress", String(progress));
+      raf = window.requestAnimationFrame(tick);
     };
 
-    const schedule = () => {
-      if (raf) return;
-      raf = window.requestAnimationFrame(update);
-    };
-
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", schedule);
-    media.addEventListener?.("change", schedule);
-    schedule();
+    setReduced(media.matches);
+    raf = window.requestAnimationFrame(tick);
 
     return () => {
-      window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", schedule);
-      media.removeEventListener?.("change", schedule);
       if (raf) window.cancelAnimationFrame(raf);
     };
   }, []);
