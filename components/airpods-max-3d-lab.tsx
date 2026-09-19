@@ -7,8 +7,7 @@ type ModelViewerElement = HTMLElement & {
   jumpCameraToGoal?: () => void;
 };
 
-const TEMP_MODEL =
-  "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb";
+const TEMP_MODEL = "/models/lab-cube.gltf";
 
 export function AirPodsMax3DLab() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -98,8 +97,8 @@ export function AirPodsMax3DLab() {
 
         <div className="lab3d-viewer-shell">
           {/*
-            We deliberately use a temporary public GLB only to validate the
-            rendering and scroll pipeline. No homepage code depends on this.
+            We deliberately use a tiny local glTF only to validate same-origin
+            rendering and the scroll pipeline. No homepage code depends on this.
           */}
           {/** @ts-expect-error Custom element provided by model-viewer at runtime. */}
           <model-viewer
