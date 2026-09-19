@@ -132,6 +132,40 @@
   background: transparent;
 }
 
+:global(.lab3d-diagnostic) {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 8;
+  width: min(310px, calc(100% - 36px));
+  padding: 12px;
+  display: grid;
+  gap: 4px;
+  border: 1px solid rgba(38, 40, 37, 0.24);
+  background: rgba(248, 247, 244, 0.92);
+  backdrop-filter: blur(10px);
+  font: 8px/1.45 var(--font-geist-mono);
+  letter-spacing: 0.3px;
+}
+
+:global(.lab3d-diagnostic strong) {
+  margin-bottom: 3px;
+  letter-spacing: 1px;
+}
+
+:global(.lab3d-renderer) {
+  overflow-wrap: anywhere;
+  color: #60695a;
+}
+
+:global(.lab3d-pure-webgl) {
+  width: 112px;
+  height: 72px;
+  margin-top: 7px;
+  border: 1px solid #aeb7a6;
+  background: #eceee6;
+}
+
 :global(.lab3d-axis) {
   position: absolute;
   z-index: 3;
@@ -216,6 +250,19 @@
   :global(.lab3d-viewer-shell::after) {
     right: -2%;
     bottom: 5%;
+  }
+
+  :global(.lab3d-diagnostic) {
+    left: 8px;
+    bottom: 8px;
+    width: min(270px, calc(100% - 16px));
+    padding: 9px;
+    font-size: 7px;
+  }
+
+  :global(.lab3d-pure-webgl) {
+    width: 96px;
+    height: 58px;
   }
 }
 
