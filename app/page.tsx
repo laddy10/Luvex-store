@@ -34,7 +34,7 @@ export default function Home() {
       >
         <Link href={`/producto/${pro.slug}`} className="editorial-audio">
           <Image
-            src={`${pro.folder}/AirPods-13.png`}
+            src={`${pro.folder}/AirPods-7.png`}
             alt="AirPods Pro 3 blancos sobre una superficie de mármol"
             fill
             sizes="(max-width: 700px) 100vw, 50vw"
