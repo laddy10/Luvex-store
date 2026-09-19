@@ -1,7 +1,9 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { Canvas, useLoader } from "@react-three/fiber";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 type Diagnostics = {
   webgl: boolean;
@@ -12,18 +14,57 @@ type Diagnostics = {
   triangleDrawn: boolean;
 };
 
-function LabObject({ progress }: { progress: number }) {
-  const y = -1.15 + progress * 3.8;
-  const x = 0.18 + Math.sin(progress * Math.PI) * 0.22;
+function AirPodsMaxModel({ progress }: { progress: number }) {
+  const gltf = useLoader(GLTFLoader, "/models/airpods-max.glb");
+
+  const prepared = useMemo(() => {
+    const scene = gltf.scene.clone(true);
+    const box = new THREE.Box3().setFromObject(scene);
+    const size = new THREE.Vector3();
+    const center = new THREE.Vector3();
+
+    box.getSize(size);
+    box.getCenter(center);
+
+    const maxDimension = Math.max(size.x, size.y, size.z) || 1;
+    const scale = 3.6 / maxDimension;
+
+    scene.traverse((object) => {
+      if (object instanceof THREE.Mesh) {
+        object.castShadow = true;
+        object.receiveShadow = true;
+      }
+    });
+
+    return { scene, center, scale };
+  }, [gltf.scene]);
+
+  const rotationY = -0.95 + progress * Math.PI * 1.75;
+  const rotationX = 0.03 + Math.sin(progress * Math.PI) * 0.12;
 
   return (
-    <mesh rotation={[x, y, 0.08]}>
-      <boxGeometry args={[2.6, 2.6, 2.6]} />
-      <meshStandardMaterial
-        color="#66715f"
-        metalness={0.35}
-        roughness={0.28}
+    <group
+      rotation={[rotationX, rotationY, 0]}
+      scale={prepared.scale}
+      position={[0, -0.05, 0]}
+    >
+      <primitive
+        object={prepared.scene}
+        position={[
+          -prepared.center.x,
+          -prepared.center.y,
+          -prepared.center.z,
+        ]}
       />
+    </group>
+  );
+}
+
+function ModelLoadingFallback() {
+  return (
+    <mesh>
+      <ringGeometry args={[1.1, 1.14, 64]} />
+      <meshBasicMaterial color="#87917d" transparent opacity={0.45} />
     </mesh>
   );
 }
@@ -137,7 +178,9 @@ export function AirPodsMax3DLab() {
         drawDiagnosticTriangle(canvas, gl);
         triangleDrawn = true;
       } catch (error) {
-        renderer = `error: ${error instanceof Error ? error.message : "desconocido"}`;
+        renderer = `error: ${
+          error instanceof Error ? error.message : "desconocido"
+        }`;
       }
     }
 
@@ -208,21 +251,22 @@ export function AirPodsMax3DLab() {
     <section className="lab3d" aria-labelledby="lab3d-title">
       <div className="lab3d-sticky">
         <div className="lab3d-copy">
-          <span className="lab3d-kicker">LUVEX / WEBGL DIAGNOSTIC</span>
+          <span className="lab3d-kicker">LUVEX / AIRPODS MAX GLB TEST</span>
           <h1 id="lab3d-title">
             Un objeto.
             <br />
             Todos sus ángulos.
           </h1>
           <p>
-            Diagnóstico aislado para distinguir WebGL puro de React Three
-            Fiber en desktop y móvil.
+            Validación del AirPods Max real en GLB, con el giro controlado por
+            el mismo progreso de scroll.
           </p>
           <div className="lab3d-meter" aria-hidden="true">
             <span />
           </div>
           <small>
-            Esta ruta no modifica SoundStory ni la homepage.
+            Modelo cargado desde /public/models/airpods-max.glb. La homepage y
+            SoundStory siguen intactas.
           </small>
         </div>
 
@@ -231,6 +275,7 @@ export function AirPodsMax3DLab() {
             className="lab3d-canvas"
             dpr={[1, 1.5]}
             camera={{ position: [0, 0, 6.4], fov: 35 }}
+            shadows
             gl={{
               antialias: true,
               alpha: true,
@@ -238,14 +283,18 @@ export function AirPodsMax3DLab() {
             }}
             frameloop="demand"
           >
-            <ambientLight intensity={1.6} />
-            <directionalLight position={[4, 6, 5]} intensity={3} />
-            <directionalLight position={[-4, -2, 2]} intensity={1.2} />
-            <LabObject progress={reduced ? 0 : progress} />
+            <ambientLight intensity={1.35} />
+            <directionalLight position={[4, 6, 5]} intensity={3.2} castShadow />
+            <directionalLight position={[-4, 1, 3]} intensity={1.45} />
+            <directionalLight position={[0, -3, -4]} intensity={0.8} />
+
+            <Suspense fallback={<ModelLoadingFallback />}>
+              <AirPodsMaxModel progress={reduced ? 0 : progress} />
+            </Suspense>
           </Canvas>
 
           <div className="lab3d-diagnostic">
-            <strong>WEBGL DIAGNOSTIC</strong>
+            <strong>AIRPODS MAX / WEBGL</strong>
             <span>WebGL: {diagnostics.webgl ? "OK" : "ERROR"}</span>
             <span>WebGL2: {diagnostics.webgl2 ? "OK" : "ERROR"}</span>
             <span>Triangle: {diagnostics.triangleDrawn ? "OK" : "ERROR"}</span>
@@ -261,7 +310,7 @@ export function AirPodsMax3DLab() {
 
           <span className="lab3d-axis lab3d-axis-x">X</span>
           <span className="lab3d-axis lab3d-axis-y">Y</span>
-          <span className="lab3d-index">01 / LOCAL WEBGL STUDY</span>
+          <span className="lab3d-index">01 / AIRPODS MAX GLB STUDY</span>
         </div>
       </div>
     </section>
