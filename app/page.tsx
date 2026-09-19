@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Hero, SoundStory } from "@/components/hero";
+import { Hero } from "@/components/hero";
 import { Catalog } from "@/components/catalog";
+import { AirPodsMaxEditorialLab } from "@/components/airpods-max-editorial-lab";
 import { Icon } from "@/components/icons";
 import { products, formatPrice } from "@/lib/catalog";
 
@@ -91,7 +92,7 @@ export default function Home() {
           </span>
         </Link>
       </section>
-      <SoundStory product={max} />
+      <AirPodsMaxEditorialLab />
       <section className="pro-feature" aria-labelledby="pro-feature-title">
         <div className="pro-feature-copy">
           <span className="eyebrow">TODO TU RITMO. EN POCO ESPACIO.</span>
