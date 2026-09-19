@@ -205,8 +205,8 @@
   }
 
   :global(.lab3d-viewer-shell) {
-    min-height: 0;
-    height: auto;
+    height: min(52svh, 500px);
+    min-height: 330px;
   }
 
   :global(.lab3d-viewer-shell::before) {
