@@ -78,7 +78,7 @@ export function ProductCard({
           aria-label={`Ver ${product.name}`}
         >
           <Image
-            src={productImage(product, product.id === "P002" ? "AirPods-7.png" : product.variantImages[selected])}
+            src={productImage(product, product.variantImages[selected])}
             alt={`${product.name} en ${product.colors[selected]}`}
             fill
             sizes={imageSizes}
