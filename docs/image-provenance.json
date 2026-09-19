@@ -1,0 +1,48 @@
+{
+  "tool": "Built-in image_gen",
+  "notes": "Non-destructive studio cleanups; original photos retained in galleries. Black iPhone 14 Pro Max variant derived from the model's lilac reference using the color confirmed in products.json.",
+  "assets": [
+    {
+      "name": "case-14-green",
+      "src": "cases/iphone-14/case-green-1.jpeg",
+      "prompt": "Use case: precise-object-edit. Asset type: premium e-commerce studio product image. Edit target: attached real product photo. Isolate the specified real case, remove hand, plastic packaging, paper insert, printed packaging wording, price labels and surrounding objects. Preserve actual product dimensions, exact camera cutout, edge design, material, color, and subtle existing embossed logo. Do not add phone, camera lenses, features or accessories. Single case, straight upright rear view with a very slight three-quarter turn showing right edge, centered, entire product visible filling 72% of square canvas, soft realistic contact shadow, plain uniform warm off-white #f4f3ef background. Soft daylight studio lighting. No typography. High fidelity to merchandise. The one light green silicone iPhone 14 case.",
+      "output": "public/products/studio/case-14-green.png"
+    },
+    {
+      "name": "case-14pm-lilac",
+      "src": "cases/iphone-14-pro-max/case-purple-1.jpeg",
+      "prompt": "Use case: precise-object-edit. Asset type: premium e-commerce studio product image. Edit target: attached real product photo. Isolate the specified real case, remove hand, plastic packaging, paper insert, printed packaging wording, price labels and surrounding objects. Preserve actual product dimensions, exact camera cutout, edge design, material, color, and subtle existing embossed logo. Do not add phone, camera lenses, features or accessories. Single case, straight upright rear view with a very slight three-quarter turn showing right edge, centered, entire product visible filling 72% of square canvas, soft realistic contact shadow, plain uniform warm off-white #f4f3ef background. Soft daylight studio lighting. No typography. High fidelity to merchandise. The one light lilac silicone iPhone 14 Pro Max case.",
+      "output": "public/products/studio/case-14pm-lilac.png"
+    },
+    {
+      "name": "case-15pm-purple",
+      "src": "cases/iphone-15-pro-max/cases-1.jpeg",
+      "prompt": "Use case: precise-object-edit. Asset type: premium e-commerce studio product image. Edit target: attached real product photo. Isolate the specified real case, remove hand, plastic packaging, paper insert, printed packaging wording, price labels and surrounding objects. Preserve actual product dimensions, exact camera cutout, edge design, material, color, and subtle existing embossed logo. Do not add phone, camera lenses, features or accessories. Single case, straight upright rear view with a very slight three-quarter turn showing right edge, centered, entire product visible filling 72% of square canvas, soft realistic contact shadow, plain uniform warm off-white #f4f3ef background. Soft daylight studio lighting. No typography. High fidelity to merchandise. The one transparent iPhone 15 Pro Max case with metallic purple camera trim, edge and MagSafe ring. Preserve the circular cutouts in camera trim. Remove the dummy printed camera insert.",
+      "output": "public/products/studio/case-15pm-purple.png"
+    },
+    {
+      "name": "case-16pm-gold",
+      "src": "cases/iphone-16-pro-max/cases-1.jpeg",
+      "prompt": "Use case: precise-object-edit. Asset type: premium e-commerce studio product image. Edit target: attached real product photo. Isolate the specified real case, remove hand, plastic packaging, paper insert, printed packaging wording, price labels and surrounding objects. Preserve actual product dimensions, exact camera cutout, edge design, material, color, and subtle existing embossed logo. Do not add phone, camera lenses, features or accessories. Single case, straight upright rear view with a very slight three-quarter turn showing right edge, centered, entire product visible filling 72% of square canvas, soft realistic contact shadow, plain uniform warm off-white #f4f3ef background. Soft daylight studio lighting. No typography. High fidelity to merchandise. ONLY the RIGHT gold-trimmed transparent iPhone 16 Pro Max case, with metallic gold edge, camera trim and MagSafe ring. Preserve the circular cutouts in camera trim. Remove the dummy printed camera insert. Exclude purple case.",
+      "output": "public/products/studio/case-16pm-gold.png"
+    },
+    {
+      "name": "case-16pm-midnight",
+      "src": "cases/iphone-16-pro-max-silicone/silicone-1.jpeg",
+      "prompt": "Use case: precise-object-edit. Asset type: premium e-commerce studio product image. Edit target: attached real product photo. Isolate the specified real case, remove hand, plastic packaging, paper insert, printed packaging wording, price labels and surrounding objects. Preserve actual product dimensions, exact camera cutout, edge design, material, color, and subtle existing embossed logo. Do not add phone, camera lenses, features or accessories. Single case, straight upright rear view with a very slight three-quarter turn showing right edge, centered, entire product visible filling 72% of square canvas, soft realistic contact shadow, plain uniform warm off-white #f4f3ef background. Soft daylight studio lighting. No typography. High fidelity to merchandise. ONLY the MIDDLE dark midnight navy silicone iPhone 16 Pro Max case, isolated empty case without phone/camera lenses, preserve shape of camera opening. Exclude green and lilac cases.",
+      "output": "public/products/studio/case-16pm-midnight.png"
+    },
+    {
+      "name": "case-14pm-blue",
+      "src": "cases/iphone-14-pro-max/case-purple-2.jpeg",
+      "prompt": "Use case: precise-object-edit. Asset type: premium e-commerce studio product image. Edit target: attached real product photo. Isolate the specified real case, remove hand, plastic packaging, paper insert, printed packaging wording, price labels and surrounding objects. Preserve actual product dimensions, exact camera cutout, edge design, material, color, and subtle existing embossed logo. Do not add phone, camera lenses, features or accessories. Single case, straight upright rear view with a very slight three-quarter turn showing right edge, centered, entire product visible filling 72% of square canvas, soft realistic contact shadow, plain uniform warm off-white #f4f3ef background. Soft daylight studio lighting. No typography. High fidelity to merchandise. ONLY the SECOND FROM LEFT dark blue silicone iPhone 14 Pro Max case. Preserve dark blue color, square rounded camera hole. Exclude other cases.",
+      "output": "public/products/studio/case-14pm-blue.png"
+    },
+    {
+      "name": "case-14pm-black",
+      "src": "cases/iphone-14-pro-max/case-purple-1.jpeg",
+      "prompt": "Use case: precise-object-edit. Asset type: premium e-commerce studio product image. Edit target: attached real product photo. Isolate the specified real case, remove hand, plastic packaging, paper insert, printed packaging wording, price labels and surrounding objects. Preserve actual product dimensions, exact camera cutout, edge design, material, color, and subtle existing embossed logo. Do not add phone, camera lenses, features or accessories. Single case, straight upright rear view with a very slight three-quarter turn showing right edge, centered, entire product visible filling 72% of square canvas, soft realistic contact shadow, plain uniform warm off-white #f4f3ef background. Soft daylight studio lighting. No typography. High fidelity to merchandise. The one silicone iPhone 14 Pro Max case, in its catalog-confirmed BLACK color variant, keeping exactly the same shape and camera opening. Change only color of case to near-black graphite.",
+      "output": "public/products/studio/case-14pm-black.png"
+    }
+  ]
+}

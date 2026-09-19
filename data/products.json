@@ -1,0 +1,74 @@
+[
+  {
+    "id": "P001",
+    "name": "AirPods Max",
+    "price": 130000,
+    "currency": "COP",
+    "colors": ["Negro", "Verde", "Gris/Plata"],
+    "folder": "/products/headphones/headphones-max",
+    "status": "confirmed"
+  },
+  {
+    "id": "P002",
+    "name": "AirPods Pro 3",
+    "price": 100000,
+    "currency": "COP",
+    "colors": ["Blanco"],
+    "folder": "/products/airpods/airpods-pro",
+    "status": "confirmed"
+  },
+  {
+    "id": "P003",
+    "name": "Funda protectora MagSafe para iPhone 15 Pro Max",
+    "price": 15000,
+    "currency": "COP",
+    "colors": ["Transparente con borde morado"],
+    "folder": "/products/cases/iphone-15-pro-max",
+    "status": "confirmed"
+  },
+  {
+    "id": "P004",
+    "name": "Funda protectora MagSafe para iPhone 16 Pro Max",
+    "price": 15000,
+    "currency": "COP",
+    "colors": ["Transparente con borde dorado"],
+    "folder": "/products/cases/iphone-16-pro-max",
+    "status": "confirmed"
+  },
+  {
+    "id": "P005",
+    "name": "Funda protectora de silicona mate iPhone 14",
+    "price": 12000,
+    "currency": "COP",
+    "colors": ["Verde claro"],
+    "folder": "/products/cases/iphone-14",
+    "status": "confirmed"
+  },
+  {
+    "id": "P006",
+    "name": "Funda protectora de silicona mate iPhone 14 Pro Max",
+    "price": 12000,
+    "currency": "COP",
+    "colors": ["Negro", "Azul oscuro", "Lila/Morado claro"],
+    "folder": "/products/cases/iphone-14-pro-max",
+    "status": "confirmed"
+  },
+  {
+    "id": "P007",
+    "name": "Funda protectora de silicona mate iPhone 16 Pro Max",
+    "price": 12000,
+    "currency": "COP",
+    "colors": ["Negro/Azul noche"],
+    "folder": "/products/cases/iphone-16-pro-max-silicone",
+    "status": "confirmed"
+  },
+  {
+    "id": "P008",
+    "name": "Case Pro MagSafe",
+    "price": null,
+    "currency": "COP",
+    "colors": ["Negro", "Azul", "Verde", "Morado"],
+    "folder": "/products/cases/case-pro-pending",
+    "status": "pending-model-confirmation"
+  }
+]
