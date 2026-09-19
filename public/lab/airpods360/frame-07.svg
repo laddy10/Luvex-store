@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="metal" x1="0" x2="1">
+      <stop offset="0" stop-color="#8d9987"/>
+      <stop offset="0.5" stop-color="#65715f"/>
+      <stop offset="1" stop-color="#4b5547"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#273024" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <rect width="900" height="900" fill="none"/>
+  <g filter="url(#shadow)">
+    <path d="M 275 335 Q 450 110 625 335" fill="none" stroke="#5c6657" stroke-width="74" stroke-linecap="round"/>
+    <path d="M 283 329 Q 450 132 617 329" fill="none" stroke="#9aa494" stroke-width="26" stroke-linecap="round" opacity=".65"/>
+    <rect x="200" y="350" width="150" height="305" rx="42.00000000000001" fill="url(#metal)"/>
+    <rect x="550" y="350" width="150" height="305" rx="42.00000000000001" fill="url(#metal)"/>
+    <ellipse cx="275" cy="505" rx="42.00000000000001" ry="108" fill="#2f382f" opacity=".7"/>
+    <ellipse cx="625" cy="505" rx="42.00000000000001" ry="108" fill="#2f382f" opacity=".7"/>
+  </g>
+  <text x="450" y="790" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" letter-spacing="6" fill="rgb(80,90,80)">FRAME 07</text>
+</svg>
