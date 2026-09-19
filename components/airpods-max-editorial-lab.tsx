@@ -6,21 +6,21 @@ import { useEffect, useRef, useState } from "react";
 
 const slides = [
   {
-    src: "/products/headphones/headphones-max/headphones-max-2.png",
+    src: "/products/headphones/headphones-max/headphones-max-green-cutout.png",
     label: "VERDE",
     eyebrow: "01 / TU PAUSA",
     title: "Haz espacio\npara tu sonido.",
     body: "Un color sereno. Una presencia que se siente sin pedir permiso.",
   },
   {
-    src: "/products/headphones/headphones-max/headphones-max-3.png",
+    src: "/products/headphones/headphones-max/headphones-max-silver-cutout.png",
     label: "GRIS / PLATA",
     eyebrow: "02 / TU RITMO",
     title: "Menos ruido.\nMás tú.",
     body: "Una composición limpia para dejar que el producto hable por sí solo.",
   },
   {
-    src: "/products/headphones/headphones-max/headphones-max-1.png",
+    src: "/products/headphones/headphones-max/headphones-max-black-cutout.png",
     label: "NEGRO",
     eyebrow: "03 / TU ESTILO",
     title: "Cierra el mundo.\nEntra en el tuyo.",
