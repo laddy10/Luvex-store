@@ -97,27 +97,29 @@ export function AirPodsMaxEditorialLab() {
     >
       <div className="editorial-lab-sticky">
         <div className="editorial-lab-copy">
-          <span className="editorial-lab-eyebrow">{active.eyebrow}</span>
+          <div className="editorial-lab-copy-state" key={active.label}>
+            <span className="editorial-lab-eyebrow">{active.eyebrow}</span>
 
-          <h1 id="editorial-lab-title">
-            {active.title.split("\n").map((line, index) => (
-              <span key={line}>
-                {line}
-                {index === 0 ? <br /> : null}
-              </span>
-            ))}
-          </h1>
+            <h1 id="editorial-lab-title">
+              {active.title.split("\n").map((line, index) => (
+                <span key={line}>
+                  {line}
+                  {index === 0 ? <br /> : null}
+                </span>
+              ))}
+            </h1>
 
-          <p>{active.body}</p>
+            <p>{active.body}</p>
 
-          <div className="editorial-lab-meta">
-            <span>{active.label}</span>
-            <span>AirPods Max</span>
+            <div className="editorial-lab-meta">
+              <span>{active.label}</span>
+              <span>AirPods Max</span>
+            </div>
+
+            <Link className="editorial-lab-cta" href="/producto/airpods-max">
+              Descubrir AirPods Max <span aria-hidden="true">→</span>
+            </Link>
           </div>
-
-          <Link className="editorial-lab-cta" href="/producto/airpods-max">
-            Descubrir AirPods Max <span aria-hidden="true">→</span>
-          </Link>
         </div>
 
         <div className="editorial-lab-stage">
