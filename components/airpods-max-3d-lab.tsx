@@ -29,7 +29,7 @@ function AirPodsMaxModel({ progress }: { progress: number }) {
     const maxDimension = Math.max(size.x, size.y, size.z) || 1;
     const scale = 3.6 / maxDimension;
 
-    scene.traverse((object) => {
+    scene.traverse((object: THREE.Object3D) => {
       if (object instanceof THREE.Mesh) {
         object.castShadow = true;
         object.receiveShadow = true;
