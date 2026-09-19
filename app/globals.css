@@ -1163,6 +1163,11 @@ a {
   background: #4e5c43;
 }
 
+.editorial-pro-transition {
+  height: clamp(56px, 7vw, 110px);
+  background: linear-gradient(180deg, #e3e7dc 0%, var(--paper) 100%);
+}
+
 .pro-feature {
   display: grid;
   grid-template-columns: 44% 56%;
@@ -3662,3 +3667,9 @@ dialog::backdrop {
   }
 }
 
+
+@media (max-width: 800px) {
+  .editorial-pro-transition {
+    height: 44px;
+  }
+}
