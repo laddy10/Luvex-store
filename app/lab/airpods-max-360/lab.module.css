@@ -1,0 +1,200 @@
+.page {
+  background: #e0e4d9;
+  color: #262825;
+}
+
+.notice {
+  position: fixed;
+  top: 126px;
+  left: 50%;
+  z-index: 80;
+  transform: translateX(-50%);
+  padding: 9px 13px;
+  border: 1px solid rgba(38, 40, 37, 0.18);
+  background: rgba(248, 247, 244, 0.88);
+  backdrop-filter: blur(12px);
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  white-space: nowrap;
+}
+
+:global(.lab360) {
+  --lab360-progress: 0;
+  position: relative;
+  height: 240svh;
+  background:
+    radial-gradient(circle at 70% 48%, rgba(247, 247, 240, 0.95), transparent 34%),
+    #e0e4d9;
+  border-top: 1px solid #ccd2c3;
+  border-bottom: 1px solid #ccd2c3;
+}
+
+:global(.lab360-sticky) {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 680px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 36% 64%;
+  align-items: center;
+  padding: 0 4.5%;
+}
+
+:global(.lab360-copy) {
+  position: relative;
+  z-index: 3;
+  max-width: 430px;
+}
+
+:global(.lab360-kicker) {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 8px;
+  letter-spacing: 1.8px;
+}
+
+:global(.lab360-copy h1) {
+  margin: 0;
+  font-size: clamp(48px, 5vw, 78px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -3.8px;
+}
+
+:global(.lab360-copy p) {
+  max-width: 34ch;
+  margin: 28px 0;
+  color: #66705f;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+:global(.lab360-meter) {
+  width: min(300px, 100%);
+  height: 1px;
+  margin: 0 0 18px;
+  overflow: hidden;
+  background: #b9c1b1;
+}
+
+:global(.lab360-meter span) {
+  display: block;
+  width: calc(var(--lab360-progress) * 100%);
+  height: 100%;
+  background: #35402f;
+}
+
+:global(.lab360-status) {
+  font: 9px var(--font-geist-mono);
+  letter-spacing: 1px;
+  color: #6e7768;
+}
+
+:global(.lab360-stage) {
+  position: relative;
+  height: min(78svh, 760px);
+  min-height: 520px;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+}
+
+:global(.lab360-ring) {
+  position: absolute;
+  inset: 8% 3%;
+  border: 1px solid #c0c8b8;
+  border-radius: 50%;
+  transform: rotate(-17deg);
+}
+
+:global(.lab360-word) {
+  position: absolute;
+  right: 1%;
+  bottom: 7%;
+  color: #77806f;
+  font-size: clamp(64px, 8vw, 130px);
+  font-weight: 300;
+  letter-spacing: -7px;
+  opacity: 0.22;
+}
+
+:global(.lab360-frame) {
+  position: relative;
+  z-index: 2;
+  width: min(72%, 650px);
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+:global(.lab360-index) {
+  position: absolute;
+  right: 3%;
+  top: 8%;
+  z-index: 3;
+  color: #6f7868;
+  font: 8px var(--font-geist-mono);
+  letter-spacing: 1.3px;
+}
+
+@media (max-width: 800px) {
+  .notice {
+    top: 102px;
+    font-size: 7px;
+  }
+
+  :global(.lab360) {
+    height: 220svh;
+  }
+
+  :global(.lab360-sticky) {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    align-items: stretch;
+    padding: 72px 6% 22px;
+  }
+
+  :global(.lab360-copy) {
+    max-width: none;
+  }
+
+  :global(.lab360-kicker) {
+    margin-bottom: 13px;
+  }
+
+  :global(.lab360-copy h1) {
+    font-size: clamp(42px, 12vw, 62px);
+    letter-spacing: -2.5px;
+  }
+
+  :global(.lab360-copy p) {
+    margin: 14px 0 16px;
+    font-size: 11px;
+  }
+
+  :global(.lab360-stage) {
+    height: min(54svh, 500px);
+    min-height: 340px;
+  }
+
+  :global(.lab360-frame) {
+    width: min(92%, 520px);
+  }
+
+  :global(.lab360-ring) {
+    inset: 8% -8% 12%;
+  }
+
+  :global(.lab360-word) {
+    right: -2%;
+    bottom: 5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(.lab360-meter span) {
+    width: 0;
+  }
+}
