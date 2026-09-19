@@ -124,12 +124,11 @@
   pointer-events: none;
 }
 
-:global(.lab3d-viewer-shell model-viewer) {
-  position: absolute;
+:global(.lab3d-canvas) {
+  position: absolute !important;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  --poster-color: transparent;
+  width: 100% !important;
+  height: 100% !important;
   background: transparent;
 }
 
