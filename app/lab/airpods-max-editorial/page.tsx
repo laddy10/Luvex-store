@@ -9,9 +9,6 @@ export const metadata = {
 export default function AirPodsMaxEditorialLabPage() {
   return (
     <main id="contenido" className={styles.page}>
-      <div className={styles.notice}>
-        LABORATORIO EDITORIAL · NO MODIFICA LA HOMEPAGE
-      </div>
       <AirPodsMaxEditorialLab />
     </main>
   );
