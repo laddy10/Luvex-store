@@ -1,0 +1,227 @@
+.page {
+  background: #e0e4d9;
+  color: #262825;
+}
+
+.notice {
+  position: fixed;
+  top: 126px;
+  left: 50%;
+  z-index: 80;
+  transform: translateX(-50%);
+  padding: 9px 13px;
+  border: 1px solid rgba(38, 40, 37, 0.18);
+  background: rgba(248, 247, 244, 0.88);
+  backdrop-filter: blur(12px);
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  white-space: nowrap;
+}
+
+:global(.lab3d) {
+  --lab-progress: 0;
+  position: relative;
+  height: 240svh;
+  background:
+    radial-gradient(circle at 69% 50%, rgba(247, 247, 240, 0.9), transparent 31%),
+    #e0e4d9;
+  border-top: 1px solid #ccd2c3;
+  border-bottom: 1px solid #ccd2c3;
+}
+
+:global(.lab3d-sticky) {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 680px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 36% 64%;
+  align-items: center;
+  padding: 0 4.5%;
+}
+
+:global(.lab3d-copy) {
+  position: relative;
+  z-index: 3;
+  max-width: 430px;
+}
+
+:global(.lab3d-kicker) {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 8px;
+  letter-spacing: 1.8px;
+}
+
+:global(.lab3d-copy h1) {
+  margin: 0;
+  font-size: clamp(48px, 5vw, 78px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -3.8px;
+}
+
+:global(.lab3d-copy p) {
+  max-width: 34ch;
+  margin: 28px 0;
+  color: #66705f;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+:global(.lab3d-copy small) {
+  display: block;
+  max-width: 42ch;
+  color: #757c70;
+  font-size: 8px;
+  letter-spacing: 0.7px;
+  line-height: 1.7;
+}
+
+:global(.lab3d-meter) {
+  width: min(280px, 100%);
+  height: 1px;
+  margin: 0 0 20px;
+  overflow: hidden;
+  background: #b9c1b1;
+}
+
+:global(.lab3d-meter span) {
+  display: block;
+  width: calc(var(--lab-progress) * 100%);
+  height: 100%;
+  background: #35402f;
+}
+
+:global(.lab3d-viewer-shell) {
+  position: relative;
+  height: min(78svh, 760px);
+  min-height: 520px;
+  isolation: isolate;
+}
+
+:global(.lab3d-viewer-shell::before) {
+  content: "";
+  position: absolute;
+  inset: 8% 3%;
+  border: 1px solid #c0c8b8;
+  border-radius: 50%;
+  transform: rotate(-17deg);
+  pointer-events: none;
+}
+
+:global(.lab3d-viewer-shell::after) {
+  content: "360°";
+  position: absolute;
+  right: 2%;
+  bottom: 8%;
+  color: #77806f;
+  font-size: clamp(64px, 8vw, 130px);
+  font-weight: 300;
+  letter-spacing: -7px;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+:global(.lab3d-viewer-shell model-viewer) {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  --poster-color: transparent;
+  background: transparent;
+}
+
+:global(.lab3d-axis) {
+  position: absolute;
+  z-index: 3;
+  color: #798273;
+  font: 9px var(--font-geist-mono);
+  pointer-events: none;
+}
+
+:global(.lab3d-axis-x) {
+  right: 4%;
+  top: 50%;
+}
+
+:global(.lab3d-axis-y) {
+  left: 50%;
+  top: 5%;
+}
+
+:global(.lab3d-index) {
+  position: absolute;
+  right: 3%;
+  top: 8%;
+  z-index: 3;
+  color: #6f7868;
+  font: 8px var(--font-geist-mono);
+  letter-spacing: 1.3px;
+}
+
+@media (max-width: 800px) {
+  .notice {
+    top: 102px;
+    font-size: 7px;
+  }
+
+  :global(.lab3d) {
+    height: 220svh;
+  }
+
+  :global(.lab3d-sticky) {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    align-items: stretch;
+    padding: 72px 6% 22px;
+  }
+
+  :global(.lab3d-copy) {
+    max-width: none;
+  }
+
+  :global(.lab3d-kicker) {
+    margin-bottom: 13px;
+  }
+
+  :global(.lab3d-copy h1) {
+    font-size: clamp(42px, 12vw, 62px);
+    letter-spacing: -2.5px;
+  }
+
+  :global(.lab3d-copy p) {
+    margin: 14px 0 16px;
+    font-size: 11px;
+  }
+
+  :global(.lab3d-copy small) {
+    display: none;
+  }
+
+  :global(.lab3d-meter) {
+    margin-bottom: 8px;
+  }
+
+  :global(.lab3d-viewer-shell) {
+    min-height: 0;
+    height: auto;
+  }
+
+  :global(.lab3d-viewer-shell::before) {
+    inset: 8% -8% 12%;
+  }
+
+  :global(.lab3d-viewer-shell::after) {
+    right: -2%;
+    bottom: 5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(.lab3d-meter span) {
+    width: 0;
+  }
+}
