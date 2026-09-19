@@ -34,7 +34,7 @@ export default function Home() {
       >
         <Link href={`/producto/${pro.slug}`} className="editorial-audio">
           <Image
-            src={`${pro.folder}/AirPods-2.jpeg`}
+            src={`${pro.folder}/AirPods-11.png`}
             alt="AirPods Pro 3 blancos sobre una superficie de mármol"
             fill
             sizes="(max-width: 700px) 100vw, 50vw"
@@ -118,7 +118,7 @@ export default function Home() {
         <figure className="pro-feature-visual">
           <div className="pro-feature-photo">
             <Image
-              src={`${pro.folder}/AirPods-2.jpeg`}
+              src={`${pro.folder}/AirPods-12.png`}
               alt="AirPods Pro 3 blancos: estuche de carga abierto y auriculares sobre mármol"
               fill
               sizes="(max-width: 800px) 100vw, 56vw"
