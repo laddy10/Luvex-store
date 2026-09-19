@@ -1,0 +1,324 @@
+.page {
+  background: #e3e7dc;
+  color: #242723;
+}
+
+.notice {
+  position: fixed;
+  top: 126px;
+  left: 50%;
+  z-index: 80;
+  transform: translateX(-50%);
+  padding: 9px 13px;
+  border: 1px solid rgba(36, 39, 35, 0.16);
+  background: rgba(248, 247, 244, 0.88);
+  backdrop-filter: blur(12px);
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  white-space: nowrap;
+}
+
+:global(.editorial-lab) {
+  --editorial-progress: 0;
+  position: relative;
+  height: 320svh;
+  background:
+    radial-gradient(circle at 71% 46%, rgba(247, 247, 241, 0.96), transparent 34%),
+    #e3e7dc;
+  border-top: 1px solid #cdd3c6;
+  border-bottom: 1px solid #cdd3c6;
+}
+
+:global(.editorial-lab-sticky) {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 680px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 36% 64%;
+  align-items: center;
+  padding: 0 4.5%;
+}
+
+:global(.editorial-lab-copy) {
+  position: relative;
+  z-index: 5;
+  max-width: 430px;
+}
+
+:global(.editorial-lab-eyebrow) {
+  display: block;
+  margin-bottom: 22px;
+  font: 8px var(--font-geist-mono);
+  letter-spacing: 1.8px;
+}
+
+:global(.editorial-lab-copy h1) {
+  margin: 0;
+  font-size: clamp(48px, 5vw, 78px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -3.8px;
+}
+
+:global(.editorial-lab-copy p) {
+  max-width: 34ch;
+  margin: 28px 0 26px;
+  color: #66705f;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+:global(.editorial-lab-meta) {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 24px;
+  color: #687163;
+  font: 8px var(--font-geist-mono);
+  letter-spacing: 1px;
+}
+
+:global(.editorial-lab-cta) {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #2d332b;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+:global(.editorial-lab-stage) {
+  position: relative;
+  height: min(80svh, 780px);
+  min-height: 540px;
+  isolation: isolate;
+}
+
+:global(.editorial-lab-orbit) {
+  position: absolute;
+  border: 1px solid #c0c8b8;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+:global(.editorial-lab-orbit.orbit-a) {
+  inset: 7% 3%;
+  transform: rotate(-14deg);
+}
+
+:global(.editorial-lab-orbit.orbit-b) {
+  inset: 18% 14%;
+  transform: rotate(20deg);
+  opacity: 0.46;
+}
+
+:global(.editorial-lab-backtype) {
+  position: absolute;
+  left: 12%;
+  top: 22%;
+  z-index: 0;
+  color: #cbd2c3;
+  font-size: clamp(130px, 18vw, 300px);
+  font-weight: 600;
+  letter-spacing: -18px;
+  line-height: 0.8;
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+:global(.editorial-lab-product) {
+  position: absolute;
+  left: 52%;
+  top: 50%;
+  z-index: 3;
+  width: min(72%, 710px);
+  aspect-ratio: 1;
+  will-change: transform;
+}
+
+:global(.editorial-lab-product img) {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition:
+    opacity 320ms ease,
+    transform 480ms cubic-bezier(.2,.7,.2,1);
+  filter: drop-shadow(0 28px 24px rgba(45, 56, 41, 0.10));
+}
+
+:global(.editorial-lab-product img.is-active) {
+  opacity: 1;
+}
+
+:global(.editorial-lab-colors) {
+  position: absolute;
+  left: 8%;
+  right: 6%;
+  bottom: 7%;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  font: 8px var(--font-geist-mono);
+  letter-spacing: 1px;
+}
+
+:global(.editorial-lab-colors span) {
+  position: relative;
+  padding-top: 9px;
+  border-top: 1px solid #c7cec0;
+  color: #879082;
+  transition: color 240ms ease;
+}
+
+:global(.editorial-lab-colors span::before) {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #364031;
+  transition: width 360ms ease;
+}
+
+:global(.editorial-lab-colors span.is-active) {
+  color: #30362e;
+}
+
+:global(.editorial-lab-colors span.is-active::before) {
+  width: 100%;
+}
+
+:global(.editorial-lab-index) {
+  position: absolute;
+  right: 3%;
+  top: 8%;
+  z-index: 5;
+  color: #6f7868;
+  font: 8px var(--font-geist-mono);
+  letter-spacing: 1.3px;
+}
+
+:global(.editorial-lab-progress) {
+  position: absolute;
+  left: 4.5%;
+  right: 4.5%;
+  bottom: 16px;
+  height: 1px;
+  background: #c4cbbd;
+}
+
+:global(.editorial-lab-progress span) {
+  display: block;
+  width: calc(var(--editorial-progress) * 100%);
+  height: 100%;
+  background: #364031;
+}
+
+@media (max-width: 800px) {
+  .notice {
+    top: 102px;
+    font-size: 7px;
+  }
+
+  :global(.editorial-lab) {
+    height: 300svh;
+  }
+
+  :global(.editorial-lab-sticky) {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    align-items: stretch;
+    padding: 70px 6% 26px;
+  }
+
+  :global(.editorial-lab-copy) {
+    max-width: none;
+  }
+
+  :global(.editorial-lab-eyebrow) {
+    margin-bottom: 12px;
+  }
+
+  :global(.editorial-lab-copy h1) {
+    font-size: clamp(42px, 12vw, 62px);
+    letter-spacing: -2.6px;
+  }
+
+  :global(.editorial-lab-copy p) {
+    margin: 14px 0 16px;
+    font-size: 11px;
+  }
+
+  :global(.editorial-lab-meta) {
+    margin-bottom: 14px;
+  }
+
+  :global(.editorial-lab-cta) {
+    font-size: 10px;
+  }
+
+  :global(.editorial-lab-stage) {
+    height: min(54svh, 510px);
+    min-height: 350px;
+    margin-top: 10px;
+  }
+
+  :global(.editorial-lab-backtype) {
+    left: 4%;
+    top: 29%;
+    font-size: clamp(100px, 34vw, 160px);
+    letter-spacing: -10px;
+  }
+
+  :global(.editorial-lab-product) {
+    left: 50%;
+    top: 47%;
+    width: min(98%, 520px);
+  }
+
+  :global(.editorial-lab-orbit.orbit-a) {
+    inset: 8% -11%;
+  }
+
+  :global(.editorial-lab-orbit.orbit-b) {
+    inset: 22% 5%;
+  }
+
+  :global(.editorial-lab-colors) {
+    left: 2%;
+    right: 2%;
+    bottom: 1%;
+    gap: 8px;
+    font-size: 7px;
+  }
+
+  :global(.editorial-lab-index) {
+    right: 1%;
+    top: 5%;
+    font-size: 7px;
+  }
+
+  :global(.editorial-lab-progress) {
+    left: 6%;
+    right: 6%;
+    bottom: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(.editorial-lab-product) {
+    transform: translate3d(-50%, -50%, 0) !important;
+  }
+
+  :global(.editorial-lab-progress span) {
+    width: 0;
+  }
+}
