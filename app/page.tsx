@@ -69,22 +69,12 @@ export default function Home() {
               </span>
             </span>
           </div>
-          <div className="case-composition">
+          <div className="case-showroom">
             <Image
-              className="composition-green"
-              src="/products/studio/case-14-green.png"
-              alt="Funda verde claro para iPhone 14"
-              width={420}
-              height={420}
-              sizes="(max-width: 700px) 65vw, 30vw"
-            />
-            <Image
-              className="composition-lilac"
-              src="/products/studio/case-14pm-lilac.png"
-              alt="Funda lila para iPhone 14 Pro Max"
-              width={420}
-              height={420}
-              sizes="(max-width: 700px) 65vw, 30vw"
+              src="/products/fundas/funda-silicona/funda-silicona-showroom-01.png"
+              alt="Fundas de silicona lila, azul y negra montadas en iPhone sobre soportes de exhibición"
+              fill
+              sizes="(max-width: 700px) 100vw, 50vw"
             />
           </div>
           <span className="editorial-price">
