@@ -71,16 +71,16 @@ export default function Home() {
           </div>
           <div className="case-composition">
             <Image
-              className="composition-green-phone"
-              src="/products/fundas/funda-silicona/editorial/funda-verde-phone.png"
+              className="composition-green"
+              src="/products/fundas/funda-silicona/editorial/funda-verde-phone-2.png"
               alt="iPhone con funda de silicona verde claro"
               width={720}
               height={960}
               sizes="(max-width: 700px) 62vw, 31vw"
             />
             <Image
-              className="composition-lilac-phone"
-              src="/products/fundas/funda-silicona/editorial/funda-lila-phone.png"
+              className="composition-lilac"
+              src="/products/fundas/funda-silicona/editorial/funda-lila-phone-2.png"
               alt="iPhone con funda de silicona lila"
               width={720}
               height={960}
