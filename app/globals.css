@@ -838,6 +838,43 @@ a {
   padding: 37px 21px 25px;
 }
 
+
+/* Mobile scroll motion: homepage catalog + editorial pair only.
+   AirPods Max storytelling is intentionally excluded. */
+@media (max-width: 800px) and (prefers-reduced-motion: no-preference) {
+  [data-mobile-motion="catalog"] .product-card .card-visual img {
+    transform: translate3d(0, var(--mobile-shift, 0px), 0)
+      scale(var(--mobile-scale, 1.02));
+    will-change: transform;
+  }
+
+  [data-mobile-motion="playlist"] > img {
+    transform: translate3d(0, var(--mobile-shift, 0px), 0)
+      scale(var(--mobile-scale, 1.02));
+    will-change: transform;
+  }
+
+  [data-mobile-motion="cases"] .composition-green {
+    transform: translate3d(
+        var(--case-green-x, 0px),
+        var(--case-green-y, 0px),
+        0
+      )
+      rotate(-7deg);
+    will-change: transform;
+  }
+
+  [data-mobile-motion="cases"] .composition-lilac {
+    transform: translate3d(
+        var(--case-lilac-x, 0px),
+        var(--case-lilac-y, 0px),
+        0
+      )
+      rotate(6deg);
+    will-change: transform;
+  }
+}
+
 .editorial-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
