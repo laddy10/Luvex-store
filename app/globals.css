@@ -909,24 +909,37 @@ a {
 .editorial-cases .editorial-overlay h2 em {
   color: #7c836e;
 }
-.case-showroom {
+.case-composition {
   position: absolute;
-  inset: 0;
+  left: 0;
+  top: 31%;
+  width: 100%;
+  height: 69%;
+  isolation: isolate;
 }
-.case-showroom img {
-  object-fit: cover;
-  object-position: 50% 52%;
-  transition: transform 0.8s cubic-bezier(.2,.65,.3,1);
-}
-.editorial-cases:hover .case-showroom img {
-  transform: scale(1.03);
-}
-.editorial-cases::after {
-  content: "";
+.case-composition img {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(239, 238, 232, 0.84) 0%, rgba(239, 238, 232, 0.34) 31%, rgba(239, 238, 232, 0) 62%);
-  pointer-events: none;
+  object-fit: contain;
+  width: 60%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(.2,.65,.3,1);
+  filter: drop-shadow(0 18px 18px rgba(38, 40, 37, 0.08));
+}
+.composition-green-phone {
+  left: -4%;
+  top: 7%;
+  transform: rotate(-11deg);
+}
+.composition-lilac-phone {
+  right: -4%;
+  top: -2%;
+  transform: rotate(11deg);
+}
+.editorial-cases:hover .composition-green-phone {
+  transform: translate(-7px, -5px) rotate(-14deg);
+}
+.editorial-cases:hover .composition-lilac-phone {
+  transform: translate(7px, -7px) rotate(14deg);
 }
 .editorial-cases .editorial-overlay,
 .editorial-cases .editorial-price {
