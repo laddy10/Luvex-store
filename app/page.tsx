@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Hero } from "@/components/hero";
 import { Catalog } from "@/components/catalog";
 import { AirPodsMaxEditorialLab } from "@/components/airpods-max-editorial-lab";
+import { MobileScrollMotion } from "@/components/mobile-scroll-motion";
 import { Icon } from "@/components/icons";
 import { products, formatPrice } from "@/lib/catalog";
 
@@ -12,6 +13,7 @@ export default function Home() {
   const cases = products.filter((p) => p.category === "Fundas");
   return (
     <main id="contenido">
+      <MobileScrollMotion />
       <Hero product={max} />
       <div className="value-strip">
         <span>
@@ -32,7 +34,11 @@ export default function Home() {
         className="editorial-pair section-space"
         aria-label="Explora por categoría"
       >
-        <Link href={`/producto/${pro.slug}`} className="editorial-audio">
+        <Link
+          href={`/producto/${pro.slug}`}
+          className="editorial-audio"
+          data-mobile-motion="playlist"
+        >
           <Image
             src={`${pro.folder}/AirPods-7.png`}
             alt="AirPods Pro 3 blancos sobre una superficie de mármol"
@@ -54,7 +60,11 @@ export default function Home() {
           </div>
           <span className="editorial-price">{formatPrice(pro.price)} COP</span>
         </Link>
-        <Link href="/tienda?categoria=fundas" className="editorial-cases">
+        <Link
+          href="/tienda?categoria=fundas"
+          className="editorial-cases"
+          data-mobile-motion="cases"
+        >
           <div className="editorial-overlay">
             <span className="eyebrow">UN CAMBIO QUE SE NOTA.</span>
             <h2>
