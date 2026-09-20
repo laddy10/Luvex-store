@@ -43,6 +43,7 @@ export function Catalog({
     <section
       className={`catalog section-space ${full ? "full-catalog" : ""}`}
       id="seleccion"
+      data-mobile-motion={full ? undefined : "catalog"}
       aria-label="Colección de productos"
     >
       {!full && (
