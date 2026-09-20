@@ -108,12 +108,12 @@ const presentation: Record<
     images: [
       "case-purple-7.png",
       "case-purple-8.png",
-      "/products/studio/case-14pm-black.png",
+      "case-purple-9.png",
       "case-purple-1.jpeg",
       "case-purple-2.jpeg",
     ],
     variantImages: [
-      "/products/studio/case-14pm-black.png",
+      "case-purple-9.png",
       "case-purple-8.png",
       "case-purple-7.png",
     ],
