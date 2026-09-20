@@ -76,11 +76,12 @@ const presentation: Record<
     description:
       "Deja ver tu iPhone. Los bordes dorados y el aro MagSafe aportan el detalle que hace la diferencia.",
     images: [
-      "/products/studio/case-16pm-gold.png",
+      "case-3.png",
       "cases-1.jpeg",
       "case-2.jpeg",
+      "/products/studio/case-16pm-gold.png",
     ],
-    variantImages: ["/products/studio/case-16pm-gold.png"],
+    variantImages: ["case-3.png"],
     generated: true,
   },
   P005: {
