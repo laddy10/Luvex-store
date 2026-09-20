@@ -909,37 +909,29 @@ a {
 .editorial-cases .editorial-overlay h2 em {
   color: #7c836e;
 }
-.case-composition {
+.case-showroom {
   position: absolute;
-  left: 0;
-  top: 33%;
-  width: 100%;
-  height: 70%;
-  isolation: isolate;
+  inset: 0;
 }
-.case-composition img {
+.case-showroom img {
+  object-fit: cover;
+  object-position: 50% 52%;
+  transition: transform 0.8s cubic-bezier(.2,.65,.3,1);
+}
+.editorial-cases:hover .case-showroom img {
+  transform: scale(1.03);
+}
+.editorial-cases::after {
+  content: "";
   position: absolute;
-  object-fit: contain;
-  width: 68%;
-  height: 100%;
-  mix-blend-mode: multiply;
-  transition: transform 0.7s;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(239, 238, 232, 0.84) 0%, rgba(239, 238, 232, 0.34) 31%, rgba(239, 238, 232, 0) 62%);
+  pointer-events: none;
 }
-.composition-green {
-  left: -1%;
-  top: 7%;
-  transform: rotate(-18deg);
-}
-.composition-lilac {
-  right: -1%;
-  top: -1%;
-  transform: rotate(17deg);
-}
-.editorial-cases:hover .composition-green {
-  transform: translate(-8px, -5px) rotate(-23deg);
-}
-.editorial-cases:hover .composition-lilac {
-  transform: translate(8px, -8px) rotate(22deg);
+.editorial-cases .editorial-overlay,
+.editorial-cases .editorial-price {
+  position: absolute;
+  z-index: 3;
 }
 
 
