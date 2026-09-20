@@ -69,12 +69,22 @@ export default function Home() {
               </span>
             </span>
           </div>
-          <div className="case-showroom">
+          <div className="case-composition">
             <Image
-              src="/products/fundas/funda-silicona/funda-silicona-showroom-01.png"
-              alt="Fundas de silicona lila, azul y negra montadas en iPhone sobre soportes de exhibición"
-              fill
-              sizes="(max-width: 700px) 100vw, 50vw"
+              className="composition-green-phone"
+              src="/products/fundas/funda-silicona/editorial/funda-verde-phone.png"
+              alt="iPhone con funda de silicona verde claro"
+              width={720}
+              height={960}
+              sizes="(max-width: 700px) 62vw, 31vw"
+            />
+            <Image
+              className="composition-lilac-phone"
+              src="/products/fundas/funda-silicona/editorial/funda-lila-phone.png"
+              alt="iPhone con funda de silicona lila"
+              width={720}
+              height={960}
+              sizes="(max-width: 700px) 62vw, 31vw"
             />
           </div>
           <span className="editorial-price">
