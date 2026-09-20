@@ -64,8 +64,12 @@ const presentation: Record<
     subtitle: "iPhone 15 Pro Max",
     description:
       "Transparencia con un toque de morado. Una funda con aro MagSafe para darle a tu iPhone un detalle diferente.",
-    images: ["/products/studio/case-15pm-purple.png", "cases-1.jpeg"],
-    variantImages: ["/products/studio/case-15pm-purple.png"],
+    images: [
+      "cases-2.png",
+      "cases-1.jpeg",
+      "/products/studio/case-15pm-purple.png",
+    ],
+    variantImages: ["cases-2.png"],
     generated: true,
   },
   P004: {
