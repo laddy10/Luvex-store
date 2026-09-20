@@ -56,7 +56,7 @@ export function ProductCard({
   index?: number;
   imageSizes?: string;
 }) {
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(product.id === "P006" ? 2 : 0);
   const { add } = useStore();
   return (
     <article className="product-card">
