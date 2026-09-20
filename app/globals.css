@@ -905,6 +905,8 @@ a {
 }
 .editorial-cases {
   background: #e9e9e0;
+  container-type: inline-size;
+  container-name: cases-editorial;
 }
 .editorial-cases .editorial-overlay h2 em {
   color: #7c836e;
@@ -945,6 +947,61 @@ a {
 .editorial-cases .editorial-price {
   position: absolute;
   z-index: 3;
+}
+
+
+/* Pilot responsive system for the cases editorial card.
+   The composition now reacts to the card width, not the viewport width. */
+@container cases-editorial (max-width: 560px) {
+  .case-composition {
+    top: 30%;
+    height: 72%;
+  }
+
+  .case-composition img {
+    width: 68%;
+  }
+
+  .composition-green {
+    left: 1%;
+    top: 4%;
+    transform: rotate(-7deg);
+  }
+
+  .composition-lilac {
+    right: 0%;
+    top: -1%;
+    transform: rotate(6deg);
+  }
+
+  .editorial-cases:hover .composition-green {
+    transform: translate(-4px, -4px) rotate(-9deg);
+  }
+
+  .editorial-cases:hover .composition-lilac {
+    transform: translate(4px, -5px) rotate(8deg);
+  }
+}
+
+@container cases-editorial (max-width: 420px) {
+  .case-composition {
+    top: 31%;
+    height: 70%;
+  }
+
+  .case-composition img {
+    width: 66%;
+  }
+
+  .composition-green {
+    left: 0%;
+    top: 5%;
+  }
+
+  .composition-lilac {
+    right: -1%;
+    top: 0%;
+  }
 }
 
 .sound-story {
@@ -2610,10 +2667,6 @@ dialog::backdrop {
     font-size: 10px;
     gap: 12px;
   }
-  .case-composition {
-    top: 42%;
-    height: 55%;
-  }
   .editorial-price {
     left: 23px;
     font-size: 7px;
@@ -3033,10 +3086,6 @@ dialog::backdrop {
   }
   .editorial-audio > img {
     object-position: center 52%;
-  }
-  .case-composition {
-    top: 34%;
-    height: 66%;
   }
   .help-strip {
     padding: 28px 6%;
