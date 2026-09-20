@@ -104,18 +104,18 @@ const presentation: Record<
     title: "Funda de silicona",
     subtitle: "iPhone 14 Pro Max",
     description:
-      "El mismo diseño, tu color. Silicona mate en lila, azul oscuro o verde claro para acompañar tu estilo de todos los días.",
+      "El mismo diseño, tu color. Silicona mate en negro, azul oscuro o lila para acompañar tu estilo de todos los días.",
     images: [
       "case-purple-7.png",
       "case-purple-8.png",
-      "case-purple-9.png",
+      "/products/studio/case-14pm-black.png",
       "case-purple-1.jpeg",
       "case-purple-2.jpeg",
     ],
     variantImages: [
-      "case-purple-7.png",
+      "/products/studio/case-14pm-black.png",
       "case-purple-8.png",
-      "case-purple-9.png",
+      "case-purple-7.png",
     ],
     generated: true,
   },
