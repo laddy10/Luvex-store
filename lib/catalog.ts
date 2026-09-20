@@ -133,11 +133,12 @@ const presentation: Record<
     description:
       "Un tono oscuro que combina con todo. Silicona mate y una presencia discreta para tu iPhone 16 Pro Max.",
     images: [
-      "/products/studio/case-16pm-midnight.png",
+      "silicone-4.png",
       "silicone-1.jpeg",
       "silicone-3.jpeg",
+      "/products/studio/case-16pm-midnight.png",
     ],
-    variantImages: ["/products/studio/case-16pm-midnight.png"],
+    variantImages: ["silicone-4.png"],
     generated: true,
   },
 };
