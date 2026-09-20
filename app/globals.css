@@ -912,34 +912,34 @@ a {
 .case-composition {
   position: absolute;
   left: 0;
-  top: 33%;
+  top: 29%;
   width: 100%;
-  height: 70%;
+  height: 74%;
   isolation: isolate;
 }
 .case-composition img {
   position: absolute;
   object-fit: contain;
-  width: 68%;
+  width: 72%;
   height: 100%;
   mix-blend-mode: multiply;
   transition: transform 0.7s;
 }
 .composition-green {
-  left: -1%;
-  top: 7%;
-  transform: rotate(-18deg);
+  left: 1%;
+  top: 2%;
+  transform: rotate(-7deg);
 }
 .composition-lilac {
-  right: -1%;
-  top: -1%;
-  transform: rotate(17deg);
+  right: 0%;
+  top: -4%;
+  transform: rotate(6deg);
 }
 .editorial-cases:hover .composition-green {
-  transform: translate(-8px, -5px) rotate(-23deg);
+  transform: translate(-6px, -5px) rotate(-10deg);
 }
 .editorial-cases:hover .composition-lilac {
-  transform: translate(8px, -8px) rotate(22deg);
+  transform: translate(6px, -7px) rotate(9deg);
 }
 .editorial-cases .editorial-overlay,
 .editorial-cases .editorial-price {
