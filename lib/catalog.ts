@@ -96,11 +96,12 @@ const presentation: Record<
     description:
       "Verde claro, acabado mate y una forma sencilla de cambiar el estilo de tu iPhone. Los pequeños detalles también cuentan.",
     images: [
-      "/products/studio/case-14-green.png",
+      "case-green-7.png",
       "case-green-1.jpeg",
       "case-green-2.jpeg",
+      "/products/studio/case-14-green.png",
     ],
-    variantImages: ["/products/studio/case-14-green.png"],
+    variantImages: ["case-green-7.png"],
     generated: true,
   },
   P006: {
